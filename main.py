@@ -32,8 +32,9 @@ if len(collects_json) > MIN_VALID_SIZE:
         "Content-Type": "application/json",
         "X-API-KEY": X_API_KEY
     }
+    old_data = response.json()
     data = { 
-        "published": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+        "published": old_data["last_modified"]
     }
     response = requests.put(url_api, data=json.dumps(data), headers=headers)
     print(response.content)

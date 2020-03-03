@@ -9,3 +9,21 @@ Pour cela, il faut une clef API de data.gouv.fr (qui est secrète). Le mode d'em
 * dans ce fichier, saisir la clef au format `X_API_KEY = "ma_clef_api"`
 
 Configurer ensuite son serveur pour exécuter le script périodiquement.
+
+## Installation
+
+Sur Ubuntu 18.04, Python3 et Git sont déjà installés.
+
+```shell
+sudo apt-get update
+sudo apt-get upgrade
+cd /srv
+git clone https://github.com/lou-dupont/EFS.git
+```
+
+Créer le fichier de paramètres, puis lancer avec
+
+```shell
+python3 main.py
+```
+
