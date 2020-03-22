@@ -27,3 +27,7 @@ Créer le fichier de paramètres, puis lancer avec
 python3 main.py
 ```
 
+Pour une exécution toutes les heures, ajouter la ligne suivante au fichier `/etc/crontab` 
+```
+01 *    * * *   root    python3 /srv/EFS/main.py >/dev/null 2>&1
+```
