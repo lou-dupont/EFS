@@ -1,7 +1,8 @@
 # Lieux et horaires des collectes de don du sang (EFS)
-Le script récupère les données via le point d'entrée AJAX utilisé par la carte et le moteur de recherche présent sur le site de l'EFS : https://dondesang.efs.sante.fr/trouver-une-collecte
 
-Son principal intérêt est d'automatiser la sauvegarde des données téléchargées vers https://www.data.gouv.fr/fr/datasets/don-du-sang-lieux-et-horaires-des-collectes/ régulièrement.
+Le script récupère les données via l'API https://api.efs.sante.fr/carto-api/swagger/ mise à disposition par l'EFS.
+
+Son principal intérêt est d'automatiser la sauvegarde des données téléchargées vers https://www.data.gouv.fr/fr/datasets/don-du-sang-lieux-et-horaires-des-collectes/ régulièrement afin de les rendre accessibles à un public non informaticien, et même en cas d'indisponibilité du serveur de l'EFS.
 
 Pour cela, il faut une clef API de data.gouv.fr (qui est secrète). Le mode d'emploi est :
 
@@ -19,6 +20,14 @@ sudo apt-get update
 sudo apt-get upgrade
 cd /srv
 git clone https://github.com/lou-dupont/EFS.git
+```
+
+Installation du module **pandas** (pour faciliter la génération du fichier Excel).
+
+```bash
+sudo apt-get install python3-pip
+sudo pip3 install pandas
+sudo pip3 install openpyxl
 ```
 
 Créer le fichier de paramètres, puis lancer avec
